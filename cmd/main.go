@@ -41,6 +41,9 @@ func organizarArquivos(userHomeDir string, arquivos []os.DirEntry) {
 		if arquivo.IsDir() {
 			continue
 		}
+		if arquivo.Name() == ".zapzap_temp" {
+			continue
+		}
 
 		extensao := filepath.Ext(arquivo.Name())
 		var destino string
